@@ -16,18 +16,18 @@ Berbeda dengan sistem terpusat, data yang disimpan di dalam *smart contract* ini
 
 ## ✨ Fitur Utama
 
-1. **Lapor Barang Hilang (lapor_barang_hilang)**
+1. **Lapor Barang Hilang (`lapor_barang_hilang`)**
    Memungkinkan pengguna untuk mencatat barang yang hilang ke dalam blockchain. Data yang disimpan meliputi:
    - Nama Barang.
    - Lokasi Terakhir Dilihat.
    - Hadiah / Imbalan (Reward dalam bentuk token/uang).
-   - Status otomatis diubah menjadi Hilang.
+   - Status otomatis diubah menjadi `Hilang`.
 
-2. **Daftar Pencarian Terbuka (get_semua_barang)**
+2. **Daftar Pencarian Terbuka (`get_semua_barang`)**
    Menampilkan seluruh katalog barang yang sedang dicari beserta hadiah yang dijanjikan. Data ini bisa ditarik secara real-time dan diintegrasikan dengan mudah ke Frontend (Web/Mobile).
 
-3. **Konfirmasi Barang Ditemukan (	andai_ditemukan)**
-   Mengubah status barang. Jika ada pengguna yang menemukan barang tersebut, status barang dapat diperbarui menjadi Ditemukan menggunakan ID barang, yang menandakan bahwa pencarian telah selesai.
+3. **Konfirmasi Barang Ditemukan (`tandai_ditemukan`)**
+   Mengubah status barang. Jika ada pengguna yang menemukan barang tersebut, status barang dapat diperbarui menjadi `Ditemukan` menggunakan ID barang, yang menandakan bahwa pencarian telah selesai.
 
 ---
 
@@ -35,39 +35,39 @@ Berbeda dengan sistem terpusat, data yang disimpan di dalam *smart contract* ini
 
 ### 1. Persiapan Lingkungan (Prerequisites)
 Pastikan Anda telah menginstal **Stellar CLI** dan **Rust** terbaru di sistem Anda.
-`ash
+```bash
 rustup update
 cargo install --locked stellar-cli --features opt
-`
+```
 
 ### 2. Membuat Buat Akun Wallet Testnet
 Buat akun baru di jaringan Stellar Testnet untuk uji coba.
-`ash
+```bash
 stellar keys generate mywallet --network testnet --fund
-`
+```
 
 ### 3. Build Smart Contract
-Masuk ke direktori contract dan lakukan *build* kode Rust menjadi file WebAssembly (.wasm).
-`ash
+Masuk ke direktori contract dan lakukan *build* kode Rust menjadi file WebAssembly (`.wasm`).
+```bash
 cd contracts/notes
 stellar contract build
-`
+```
 
 ### 4. Deploy ke Stellar Testnet
-Deploy file .wasm hasil build ke jaringan Testnet menggunakan wallet yang telah dibuat.
-`ash
+Deploy file `.wasm` hasil build ke jaringan Testnet menggunakan wallet yang telah dibuat.
+```bash
 stellar contract deploy \
   --wasm ../../target/wasm32v1-none/release/notes.wasm \
   --source-account mywallet \
   --network testnet
-`
-*(Catat **Contract ID** yang dihasilkan dari perintah ini, misalnya: CABGE4IXVW...)*
+```
+*(Catat **Contract ID** yang dihasilkan dari perintah ini, misalnya: `CABGE4IXVW...`)*
 
 ### 5. Berinteraksi (Invoke) dengan Contract
-Ganti [CONTRACT_ID] dengan ID yang Anda dapatkan setelah proses deploy.
+Ganti `[CONTRACT_ID]` dengan ID yang Anda dapatkan setelah proses deploy.
 
 **📍 Melaporkan Barang Hilang:**
-`ash
+```bash
 stellar contract invoke \
   --id [CONTRACT_ID] \
   --source-account mywallet \
@@ -76,21 +76,21 @@ stellar contract invoke \
   --nama_barang "Dompet" \
   --lokasi_terakhir "Kantin" \
   --hadiah_imbalan 50000
-`
+```
 
 **📍 Melihat Semua Data Barang:**
-`ash
+```bash
 stellar contract invoke \
   --id [CONTRACT_ID] \
   --source-account mywallet \
   --network testnet \
   -- get_semua_barang
-`
+```
 
 ---
 
 ## ⛓️ Contract Detail (Testnet)
-- **Contract ID:** CABGE4IXVW4OIZ34NVKBBQTXKU55NT7OV3UC2E3W6MBZHWXPGTKRKPU6
+- **Contract ID:** `CABGE4IXVW4OIZ34NVKBBQTXKU55NT7OV3UC2E3W6MBZHWXPGTKRKPU6`
 - **Network:** Stellar Testnet
 - **Stellar Expert Explorer:** [Lihat Histori Transaksi di sini](https://stellar.expert/explorer/testnet/contract/CABGE4IXVW4OIZ34NVKBBQTXKU55NT7OV3UC2E3W6MBZHWXPGTKRKPU6)
 
