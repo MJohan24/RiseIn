@@ -1,3 +1,4 @@
+<img width="1919" height="912" alt="Screenshot 2026-04-15 122337" src="https://github.com/user-attachments/assets/ecdeff51-225a-45f3-9872-cce3c53f9da4" />
 # 🔍 Lost & Found DApp (Stellar / Soroban)
 
 **Lost & Found DApp** - Decentralized application (DApp) berbasis blockchain Stellar untuk melaporkan dan melacak barang hilang maupun ditemukan.
@@ -94,7 +95,8 @@ stellar contract invoke \
 - **Network:** Stellar Testnet
 - **Stellar Expert Explorer:** [Lihat Histori Transaksi di sini](https://stellar.expert/explorer/testnet/contract/CABGE4IXVW4OIZ34NVKBBQTXKU55NT7OV3UC2E3W6MBZHWXPGTKRKPU6)
 - **Live Monitoring ⬇️⬇️⬇️**
-![Teks Alternatif Gambar](Screenshot 2026-04-15 122337.png)
+<img width="1919" height="912" alt="Screenshot 2026-04-15 122337" src="https://github.com/user-attachments/assets/b50f98b2-46a2-41c3-94e1-6fc8aa686e50" />
+
 ---
 
 ## 🔮 Rencana Pengembangan ke Depan (Roadmap)
