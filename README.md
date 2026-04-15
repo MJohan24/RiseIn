@@ -94,7 +94,7 @@ stellar contract invoke \
 - **Network:** Stellar Testnet
 - **Stellar Expert Explorer:** [Lihat Histori Transaksi di sini](https://stellar.expert/explorer/testnet/contract/CABGE4IXVW4OIZ34NVKBBQTXKU55NT7OV3UC2E3W6MBZHWXPGTKRKPU6)
 - **Live Monitoring ⬇️⬇️⬇️**
-  (Screenshot 2026-04-15 122337)
+![Teks Alternatif Gambar](Screenshot 2026-04-15 122337.png)
 ---
 
 ## 🔮 Rencana Pengembangan ke Depan (Roadmap)
